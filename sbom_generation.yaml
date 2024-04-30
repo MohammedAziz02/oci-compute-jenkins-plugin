@@ -21,7 +21,7 @@ steps:
   - type: Command
     name: "Run cdxgen tool"
     command: |
-      cdxgen -t java -o artifactSBOM.json —spec-version=1.4
+      cdxgen -o artifactSBOM.json -t java --spec-version 1.4
 outputArtifacts:
   - name: artifactSBOM
     type: BINARY
