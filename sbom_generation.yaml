@@ -8,6 +8,9 @@ version: 0.1
 component: build
 timeoutInSeconds: 1000
 shell: bash
+env:
+  variables:
+    MVN_ARGS: "-DincludeTestScope=false -DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false"
 
 steps:
   - type: Command
@@ -17,7 +20,6 @@ steps:
   - type: Command
     name: "Run cdxgen tool"
     command: |
-      export MVN_ARGS="-DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false -DincludeTestScope=false"
       cdxgen -t java --spec-version 1.4 -o artifactSBOM.json
 outputArtifacts:
   - name: artifactSBOM
