@@ -18,6 +18,9 @@ steps:
     name: "Export necessary env variables"
     command: |
       export MVN_ARGS="-DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false -DincludeTestScope=false"
+  - type: Command
+    name: "echo command"
+    command: |
       echo $MVN_ARGS
   - type: Command
     name: "Run cdxgen tool"
