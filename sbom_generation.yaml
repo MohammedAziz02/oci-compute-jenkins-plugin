@@ -10,7 +10,8 @@ timeoutInSeconds: 1000
 shell: bash
 env:
   variables:
-    MVN_ARGS: "-DincludeTestScope=false -DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false"
+    CDX_MAVEN_INCLUDE_TEST_SCOPE: "false"
+    MVN_ARGS: "-DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false"
 
 steps:
   - type: Command
