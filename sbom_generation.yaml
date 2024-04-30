@@ -15,9 +15,13 @@ steps:
     command: |
       npm install -g @cyclonedx/cdxgen
   - type: Command
+    name: "Export necessary env variables"
+    command: |
+      export MVN_ARGS="-DincludeRuntimeScope=true -DincludeCompileScope=true -DincludeProvidedScope=false -DincludeSystemScope=false -DincludeTestScope=false"
+  - type: Command
     name: "Run cdxgen tool"
     command: |
-      cdxgen -t java -o artifactSBOM.json --spec-version=1.4
+      cdxgen -t java -o artifactSBOM.json —spec-version=1.4
 outputArtifacts:
   - name: artifactSBOM
     type: BINARY
